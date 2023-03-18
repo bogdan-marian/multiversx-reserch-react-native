@@ -7,18 +7,23 @@ This is a research project and I'm trying to connect from react native to xPorta
 [wallet connect Auth / Dapp Usage / example](https://docs.walletconnect.com/2.0/javascript/auth/dapp-usage)
 
 ## research log
+
 [fix for missing TextEncoder](https://github.com/hapijs/joi/issues/2141#issuecomment-546440380)
+
 ```bash
 npm install text-encoding-polyfill
 npm install @hapi/joi
 ```
+
 and then
+
 ```javascript
-import 'text-encoding-polyfill'
-import Joi from '@hapi/joi'
+import 'text-encoding-polyfill';
+import Joi from '@hapi/joi';
 ```
 
 ## multivers x provider
+
 [git page](https://github.com/multiversx/mx-sdk-js-wallet-connect-provider)
 
 ```
@@ -31,3 +36,14 @@ import Joi from '@hapi/joi'
 @multiversx/sdk-core @multiversx/sdk-dapp @multiversx/sdk-network-providers
 ```
 
+```
+<WalletConnectLoginButton
+callbackRoute="/"
+loginButtonText={'xPortal App'}
+isWalletConnectV2={true}
+className="btn btn-sm dapp-primary font-size-sm w-60"
+/>
+
+```
+
+[instructions page](https://docs.multiversx.com/sdk-and-tools/sdk-dapp/#set-the-walletconnect-flag)
