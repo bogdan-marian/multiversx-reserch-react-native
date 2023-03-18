@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation, route}) => {
   return (
     <View
       style={{
@@ -10,6 +10,7 @@ const ProfileScreen = () => {
         alignItems: 'center',
       }}>
       <Text>Hello, ProfileScreen!</Text>
+      <Text>This is {route.params.name}'s profile</Text>
     </View>
   );
 };
