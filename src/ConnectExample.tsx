@@ -1,8 +1,6 @@
 import React from 'react';
 import {Alert, Button, Text, View} from 'react-native';
-import AuthClient from "@walletconnect/auth-client";
-
-
+import AuthClient from '@walletconnect/auth-client';
 
 const showAlert = () =>
   Alert.alert('Alert Title', 'Time to connect with xPortal', [
@@ -18,26 +16,25 @@ const showAlert = () =>
     {text: 'OK', onPress: () => console.log('OK Pressed')},
   ]);
 
-  const authClient = await AuthClient.init({
-    projectId: "<YOUR_PROJECT_ID>",
-    metadata: {
-      name: "my-auth-dapp",
-      description: "A dapp using WalletConnect AuthClient",
-      url: "my-auth-dapp.com",
-      icons: ["https://my-auth-dapp.com/icons/logo.png"],
-    },
-  });
+const initAuthClient = async () => {
+  try {
 
-  const initAuthClient = () => {
-    authClient.on("auth_response", ({ params }) => {
-      if (Boolean(params.result?.s)) {
-        // Response contained a valid signature -> user is authenticated.
-      } else {
-        // Handle error or invalid signature case
-        console.error(params.message);
-      }
+    console.log('Init auth');
+    const authClient = await AuthClient.init({
+      projectId: "3eed50c3b154388063a0920505f8322a",
+      metadata: {
+        name: "my-auth-dapp",
+        description: "A dapp using WalletConnect AuthClient",
+        url: "#",
+        icons: ["https://my-auth-dapp.com/icons/logo.png"],
+      },
     });
+
+    console.log('End auth');
+  } catch (error) {
+    console.log("Huston we have an error", error)
   }
+};
 
 const ConnectExample = ({route}) => {
   return (
@@ -48,7 +45,7 @@ const ConnectExample = ({route}) => {
         alignItems: 'center',
       }}>
       <Text style={{color: 'black'}}>Hello, Connect example!</Text>
-      <Button title="Connect with xPortal" onPress={showAlert} />
+      <Button title="Connect with xPortal" onPress={initAuthClient} />
     </View>
   );
 };
