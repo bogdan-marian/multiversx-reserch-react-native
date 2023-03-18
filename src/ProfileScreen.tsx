@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const ProfileScreen = ({navigation, route}) => {
+const ProfileScreen = ({ route}) => {
   return (
     <View
       style={{

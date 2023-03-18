@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Text, View} from 'react-native';
 
-const HomeScreen = ({ navigation }) =>{
+const HomeScreen = ({navigation}) => {
   return (
     <View
       style={{
@@ -12,8 +12,13 @@ const HomeScreen = ({ navigation }) =>{
       <Text style={{color: 'black'}}>Hello, Home!</Text>
       <Button
         title="Go to Jane's profile"
-        onPress={() => navigation.navigate('Profile', { name: 'Jane' })} />
+        onPress={() => navigation.navigate('Profile', {name: 'Jane'})}
+      />
+      <Button
+        title="Connect Example"
+        onPress={() => navigation.navigate('ConnectExample')}
+      />
     </View>
   );
-}
+};
 export default HomeScreen;
