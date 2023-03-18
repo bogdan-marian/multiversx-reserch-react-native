@@ -1,5 +1,8 @@
 import React from 'react';
 import {Alert, Button, Text, View} from 'react-native';
+import AuthClient from "@walletconnect/auth-client";
+
+
 
 const showAlert = () =>
   Alert.alert('Alert Title', 'Time to connect with xPortal', [
@@ -14,6 +17,27 @@ const showAlert = () =>
     },
     {text: 'OK', onPress: () => console.log('OK Pressed')},
   ]);
+
+  const authClient = await AuthClient.init({
+    projectId: "<YOUR_PROJECT_ID>",
+    metadata: {
+      name: "my-auth-dapp",
+      description: "A dapp using WalletConnect AuthClient",
+      url: "my-auth-dapp.com",
+      icons: ["https://my-auth-dapp.com/icons/logo.png"],
+    },
+  });
+
+  const initAuthClient = () => {
+    authClient.on("auth_response", ({ params }) => {
+      if (Boolean(params.result?.s)) {
+        // Response contained a valid signature -> user is authenticated.
+      } else {
+        // Handle error or invalid signature case
+        console.error(params.message);
+      }
+    });
+  }
 
 const ConnectExample = ({route}) => {
   return (
