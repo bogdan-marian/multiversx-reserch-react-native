@@ -18,6 +18,10 @@ const HomeScreen = ({navigation}) => {
         title="Connect Example"
         onPress={() => navigation.navigate('ConnectExample')}
       />
+       <Button
+        title="WithMultiversXConnectProvider"
+        onPress={() => navigation.navigate('WithMultiversXConnectProvider')}
+      />
     </View>
   );
 };

@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './HomeScreen';
 import ProfileScreen from './ProfileScreen';
 import ConnectExample from './ConnectExample';
+import ConnectWalletConnectExample from './ConnectWalletConnetExample';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,10 @@ const HelloNavigation = () => {
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="ConnectExample" component={ConnectExample} />
+        <Stack.Screen
+          name="WithMultiversXConnectProvider"
+          component={ConnectWalletConnectExample}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
