@@ -1,6 +1,7 @@
 import React from 'react';
 import {Alert, Button, Text, View} from 'react-native';
 import AuthClient from '@walletconnect/auth-client';
+import { WalletConnectLoginButton} from "@multiversx/sdk-dapp/UI";
 
 const showAlert = () =>
   Alert.alert('Alert Title', 'Time to connect with xPortal', [
@@ -45,7 +46,7 @@ const ConnectWalletConnectExample = ({route}) => {
         alignItems: 'center',
       }}>
       <Text style={{color: 'black'}}>Hello, WithMultiversXConnectProvider!</Text>
-      <Button title="Connect with xPortal" onPress={initAuthClient} />
+      <Button title="Connect with xPortal" onPress={showAlert} />
     </View>
   );
 };

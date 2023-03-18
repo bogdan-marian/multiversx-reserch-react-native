@@ -21,3 +21,13 @@ import Joi from '@hapi/joi'
 ## multivers x provider
 [git page](https://github.com/multiversx/mx-sdk-js-wallet-connect-provider)
 
+```
+"@multiversx/sdk-core": "11.4.1",
+"@multiversx/sdk-dapp": "2.10.5",
+"@multiversx/sdk-network-providers": "1.2.1",
+
+
+
+@multiversx/sdk-core @multiversx/sdk-dapp @multiversx/sdk-network-providers
+```
+
