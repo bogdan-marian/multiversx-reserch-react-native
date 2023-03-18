@@ -1,5 +1,4 @@
 import React from 'react';
-import {Text, View} from 'react-native';
 import HelloNavigation from './HelloNavigation';
 
 import WalletConnectProvider from "@walletconnect/react-native-dapp";
