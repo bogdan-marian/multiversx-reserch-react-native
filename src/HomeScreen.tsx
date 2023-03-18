@@ -9,7 +9,7 @@ const HomeScreen = ({ navigation }) =>{
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>Hello, Home!</Text>
+      <Text style={{color: 'black'}}>Hello, Home!</Text>
       <Button
         title="Go to Jane's profile"
         onPress={() => navigation.navigate('Profile', { name: 'Jane' })} />
