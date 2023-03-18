@@ -18,3 +18,8 @@ import 'text-encoding-polyfill'
 import Joi from '@hapi/joi'
 ```
 
+
+## wallet connect provider? 
+```
+https://github.com/multiversx/mx-sdk-js-wallet-connect-provider
+```
